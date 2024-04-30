@@ -18,11 +18,12 @@
     </section>  
 
     <section>  
-        <h2>代表文章</h2>  
+        <h2>文章</h2>  
         <ol>  
-            <li>Huiqiang Liang, Haining Lu, Geng Wang. BPDTE: Batch Private Decision Tree Evaluation via Amortized Efficient Private Comparison. Cryptology ePrint Archive, Paper 2024/619. <!--<a href="https://eprint.iacr.org/2024/619">https://eprint.iacr.org/2024/619</a>--> In submission <a href="files/BPDTE Batch Private Decision Tree Evaluation via Amortized Efficient Private Comparison.pdf">PDF</a> </li>  
-            <li>梁慧强, 陆海宁. 基于全同态加密的密态决策树推理方法. 中国专利 2024. In submission. <a href="files/基于全同态加密的密态决策树推理方法.pdf">PDF</a> </li>  
+            <li>Huiqiang Liang, Haining Lu, Geng Wang. BPDTE: Batch Private Decision Tree Evaluation via Amortized Efficient Private Comparison. Cryptology ePrint Archive, Paper 2024/619. <!--<a href="https://eprint.iacr.org/2024/619">https://eprint.iacr.org/2024/619</a>--> <a href="files/BPDTE Batch Private Decision Tree Evaluation via Amortized Efficient Private Comparison.pdf">PDF</a> <span style="color:red">In submission</span> </li>  
+            <li>梁慧强, 陆海宁. 基于全同态加密的密态决策树推理方法. 中国专利 2024. <a href="files/基于全同态加密的密态决策树推理方法.pdf">PDF</a> <span style="color:red">In submission</span> </li>  
             <li>Huiqiang Liang, Jianhua Chen. Non-interactive SM2 threshold signature scheme with identifiable abort. Frontiers of Computer Science. 2024, 18(1): 1-14. <!--<a href="https://doi.org/10.1007/s11704-022-2288-x">https://doi.org/10.1007/s11704-022-2288-x</a>--> <a href="files/Non-interactive SM2 threshold signature scheme with identifiable abort.pdf">PDF</a> </li>  
+            <li>***, Huiqiang Liang, ***, ***. Private Decision Tree Evaluation, yet on the Data Owner Side. 2024. <span style="color:red">In submission</span></li>
             <!-- 添加更多技能 -->  
         </ol>  
     </section>  
@@ -39,24 +40,34 @@
         <p>你可以通过以下方式联系我：</p>  
         <ul>  
             <li>邮箱: lianghuiqang92@gmail.com</a></li>
-            <li>地址: 中国 上海市 松江区 沐川路58弄</a></li>  
+            <li>地址: 中国 上海市 松江区 沐川路58弄 G60商用密码产业基地</a></li>  
             <!--<li><a href="https://github.com/lianghuiqiang9">访问我的GitHub主页</a></li>  -->
             <!-- 添加更多联系方式 -->  
         </ul>  
     </section>
 
     <section>
-        <h2>对代表文章的标注</h2>
+        <h2>对文章的标注</h2>
         <ol>
             <li> 
                 基于分摊高效隐私比较的批处理隐私决策树评估(BPDTE)<br />
-                对决策树分类模型进行拓展，在密文数据上进行决策树评估。设计了3种隐私比较算法TECMP、RDCMP、CDCMP，并基于此分别设计了隐私决策树评估方案TECMP-PDTE、RDCMP-PDTE、CDCMP-PDTE以及CRR模式。这项工作代码在这里<a href="https://github.com/LoCCS-ViewSources/Batch-PDTE">BPDTE</a>，其中隐私比较算法的设计简单又巧妙，在性能有较好的表现，隐私决策树评估性能也有很好的表现。需要注意的是我们使用了批处理的时间，仅考虑单条查询时间并不占优势，另外解密时的通信量与叶子节点个数呈线性不是令人满意。在安全方面，决策树的评估结果本身会泄露信息，文章没有考虑这种情况。
+                对决策树分类模型进行拓展，在密文数据上进行决策树评估。设计了3种隐私比较算法TECMP、RDCMP、CDCMP，并基于此分别设计了隐私决策树评估方案TECMP-PDTE、RDCMP-PDTE、CDCMP-PDTE以及CRR模式。这项工作代码在这里<a href="https://github.com/LoCCS-ViewSources/Batch-PDTE">BPDTE</a>，其中隐私比较算法的设计简单又巧妙，在性能有较好的表现，隐私决策树评估性能也有很好的表现。需要注意的是我们使用了批处理的时间，仅考虑单条查询时间并不占优势，另外解密时的通信量与叶子节点个数呈线性不是令人满意。在安全方面，决策树的评估结果本身就会泄露信息，文章没有考虑这种情况。
                 <ul>
                     <li>隐私决策树评估是指在数据方-模型方的两方模型中，数据方希望使用模型方的决策树模型进行分类而不泄露自己的数据，模型方希望数据方除了分类结果以外，得不到决策树的秘密信息。</li>
                     <li>设计了隐私比较TECMP，基于有限级数同态加密BFV方案，结合温度计编码(Thermometer Encoding)、BFV批处理的旋转(Rotate)操作和FOLKLORE比较算法的二分模式，达到26624位比特精度，32比特的分摊时间为0.3ms。</li>
                     <li>设计了隐私比较RDCMP和CDCMP，基于FOLKLORE比较算法的二分模式，乘法深度是比较精度的对数级，最高可支持1024位比较精度，平衡了批处理下的乘法深度和比较精度、输入类型、计算量和通信量，32比特的分摊时间为0.16ms和0.9ms，比当前最快方案高出一个数量级。</li>
                     <li>设计了清除行间关系算法(CRR)，混淆分类结果和分类结果位置的关系，用于提高隐私决策树评估方案的安全性。</li>
                     <li>隐私决策树评估方案支持任意精度、多行数据在1000个节点以上的12比特精度的决策树进行隐私评估，TECMP-PDTE的分摊时间为52.2ms，具有更高安全性的TECMP-PDTE-CRR的分摊时间为210ms，比当前最快的隐私决策树评估方案分别快56倍和14倍以上。</li>
+                </ul>
+            </li>
+
+            <li> 
+                基于全同态加密的密态决策树推理方法.<br />
+                对决策树分类模型进行拓展，明文数据在加密决策树上进行评估。其中专利中我们使用了门电路逐比特加密并且设计了单路径遍历，代码<a href="https://github.com/lianghuiqiang9/cdte-with-final">BCDTE-FINAL</a>和<a href="https://github.com/lianghuiqiang9/cdte-with-openfhe">BCDTE-OpenFHE</a>中仍是全遍历(可以优化为单路径遍历，但是门电路的Bootstrapping严重影响了性能，并不实用)。
+                <ul>
+                    <li>针对隐私决策树评估方案和具体的应用场景，如税务信息的监管非常严格，甚至不支持加密后流通，在明文数据上对密态决策树进行评估。</li>
+                    <li>设计门电路密态决策评估(GCDTE)，基于全同态加密方案TFHE、FINAL，支持单路径遍历。</li>
+                    <li>在50个节点的11比特精度下200s内完成。</li>
                 </ul>
             </li>
 
@@ -71,17 +82,15 @@
             </li>
 
             <li> 
-                基于全同态加密(FHE)的隐私决策树评估(PDTE)<br />
-                对决策树分类模型进行拓展，明文数据在加密决策树上进行评估。分别设计了密态决策树评估方案(CDTE)、密态网络模型评估方案(CNME)、门电路密态决策树评估方案(BCDTE)(指基于全同态加密的密态决策树推理方法)。其中BCDTE所在的专利中我们使用了门电路逐比特加密并且设计了单路径遍历，代码<a href="https://github.com/lianghuiqiang9/cdte-with-final">BCDTE-FINAL</a>和<a href="https://github.com/lianghuiqiang9/cdte-with-openfhe">BCDTE-OpenFHE</a>中仍是全遍历(可以优化为单路径遍历，但是门电路的Bootstrapping严重影响了性能，并不实用)。另外CDTE是SortingHat的推广，代码在<a href="https://github.com/LoCCS-ViewSources/TreeEncryption">TreeEncryption</a>，加密决策树而非数据，并且推广到网络上，这个工作也在投稿中(二作)，CDTE的性能很好，节点可以很多，CNME的性能不高，节点数量不能过高。最大的遗憾就是不能拓展数据的精度，只能在12比特内，但是也是够用的。
+                基于RGSW方法的隐私决策树评估(PDTE)<br />
+                对决策树分类模型进行拓展，明文数据在加密决策树上进行评估。分别设计了密态决策树评估方案(CDTE)、密态网络模型评估方案(CNME)。这项工作是<a href="https://eprint.iacr.org/2022/757">SortingHat</a>的推广，代码在<a href="https://github.com/LoCCS-ViewSources/TreeEncryption">TreeEncryption</a>，加密决策树而非数据，并且推广到网络上，这个工作也在投稿中(二作)，CDTE的性能很好，节点数量可以在100个左右，但加密时间很长。CNME的性能不高，节点数量不能过高。最大的遗憾就是不能拓展数据的精度，只能在12比特内，但是也是够用的。
                 <ul>
                     <li>针对隐私决策树评估方案和具体的应用场景，如税务信息的监管非常严格，甚至不支持加密后流通，在明文数据上对密态决策树进行评估。</li>
                     <li>设计密态决策树评估(CDTE)，使用RGSW密文的外积算法进行隐私比较，降低评估过程中的噪声增长，在决策树评估过程中的节点选择中模糊中间节点中用于隐私比较的数据所在位置。</li>
                     <li>设计密态网络模型评估(CNME)，具有层间全连接结构，并模糊相邻两层间的父子节点的连接关系、模糊中间节点和叶子节点的分类。</li>
-                    <li>设计门电路密态决策评估(GCDTE)，基于全同态加密方案TFHE、FINAL，支持单路径遍历。</li>
-                    <li>密态决策树模型(CDTE)评估在100个节点的11比特精度下在1.6s内完成。密态网络模型评估(CNME)在50个节点的11比特精度下40s内完成。门电路密态决策评估(GCDTE)在50个节点的11比特精度下200s内完成。</li>
+                    <li>密态决策树模型(CDTE)评估在100个节点的11比特精度下在1.6s内完成。密态网络模型评估(CNME)在50个节点的11比特精度下40s内完成。</li>
                 </ul>
             </li>
-
         </ol>
 
 
